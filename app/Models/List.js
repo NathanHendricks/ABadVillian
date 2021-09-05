@@ -12,7 +12,7 @@ export class List {
         return /*html*/ `
     <div class="col-md-4">
         <div class="card">
-            <div class="card-header ${this.color}!important">
+            <div class="card-header">
                 <div>
                     <h3>${this.listName}</h3>
                     <button type="btn" class="m-2 btn btn-danger" onclick="app.listsController.deleteLists('${this.id}')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"> 
@@ -23,11 +23,11 @@ export class List {
             </div>
             <div card="card-body">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row p-3 d-flex justify-content-between align-items-center">
                         <h3>Tasks:</h3>
                         ${this.Tasks}
                         <div class="col">
-                            <form onsubmit="app.tasksController.addTasks('${this.id}','${this.listName})">
+                            <form onsubmit="app.tasksController.addTasks('${this.id}','${this.listName}')">
                                 <div class="form-group">
                                     <label for="taskName"> Task Name: </label>
                                     <input type="text" name:="taskName" class="form-control" id="taskName" required minlength="3" maxlength="50">
