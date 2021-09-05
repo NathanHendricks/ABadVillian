@@ -24,7 +24,8 @@ export class ListsController {
             // @ts-ignore
             // id: form.listData.value,
             // @ts-ignore
-            listName: form.listName.value
+            listName: form.listName.value,
+            color: form.color.value
 
         }
         try {

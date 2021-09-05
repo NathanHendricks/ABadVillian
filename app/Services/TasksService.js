@@ -8,6 +8,7 @@ class TasksService {
         ProxyState.on('tasks', saveState)
     }
     addTasks(taskData) {
+        console.log("fromm the army", taskData)
         ProxyState.tasks = [...ProxyState.tasks, new Task(taskData)]
     }
 

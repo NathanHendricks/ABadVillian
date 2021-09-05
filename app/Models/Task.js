@@ -5,15 +5,16 @@ export class Task {
         this.listId = taskData.listId
         this.id = taskData.id || generateId()
         this.taskName = taskData.taskName
-        this.taskDone = taskData.taskDone
+        this.taskDone = false
 
     }
 
 
     get CardTemplate() {
+        // debugger
         return /*html*/ `
         <ul>
-            <li>${this.taskName}</li>
+            <li><span><b>${this.taskName}</b></span></li>
             <label for="taskDone" class="">Fin?</label>
             <input type="checkbox" name="taskDone" id="taskDone">
             <button type="btn" class="btn btn-danger d-flex justify-content-start" onclick="app.tasksController.deleteTasks('${this.id}')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"> 

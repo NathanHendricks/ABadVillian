@@ -12,6 +12,7 @@ export class TasksController {
         event.preventDefault()
         let form = event.target
 
+        console.log("TCP", listId);
         let taskData = {
             // @ts-ignore
             name: form.taskName.value,
