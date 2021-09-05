@@ -1,0 +1,5 @@
+/* BASIC STYLES HERE */
+
+.bg-info {
+    background-color: '${this.color}'!important;
+}
