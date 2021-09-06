@@ -23,6 +23,7 @@ class TasksService {
 
     deleteTasks(taskId) {
         ProxyState.tasks = ProxyState.tasks.filter(t => t.id !== taskId)
+
     }
 
     // totalTasks() {
