@@ -19,15 +19,15 @@ class TasksService {
         ProxyState.tasks = ProxyState.tasks.filter(t => t.id !== taskId)
     }
 
-    totalTasks() {
-        for (let i = 0; i <= ProxyState.tasks.length; i++) {
-            let number = ProxyState.tasks[i]
-            let newLength = number.length
-            if (newLength = number.length) {
-                console.log(newLength);
-            }
-        }
-    }
+    // totalTasks() {
+    //     for (let i = 0; i <= ProxyState.tasks.length; i++) {
+    //         let number = ProxyState.tasks[i].length
+    //         console.log('from TT', number)
+    //         console.log('from total tasks', ProxyState.numberOfTasks)
+
+
+    //     }
+    // }
 
     taskDone(taskId) {
             let checkedBox = ProxyState.tasks.find(t => t.id == taskId)
@@ -39,6 +39,7 @@ class TasksService {
                 checkedBox.taskDone = true
                 if (card.numberOfTasks >= 1) {
                     card.numberOfTasks--
+                        return card.numberOfTasks
                 }
                 ProxyState.lists = ProxyState.lists
                 ProxyState.tasks = ProxyState.tasks
@@ -47,6 +48,7 @@ class TasksService {
                 card.numberOfTasks++
                     ProxyState.lists = ProxyState.lists
                 ProxyState.tasks = ProxyState.tasks
+                return card.numberOfTasks
             }
         }
         // it kinda works but not...

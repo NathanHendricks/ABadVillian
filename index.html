@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <title>A Bad Villian</title>
 </head>
 
@@ -29,7 +30,7 @@
                     <form class="bg-secondary rounded p-2 shadow" onsubmit="app.listsController.addToLists(event); return false" id="list-form">
                         <div class="form-group">
                             <label for="listName">List Name:</label>
-                            <input type="text" class="form-control color" name="listName" id="listName" required minlength="3" maxlength="15">
+                            <input type="text" class="form-control" name="listName" id="listName" required minlength="3" maxlength="15">
                         </div>
                         <div class="form-group">
                             <label for="color" class="">color:</label>
