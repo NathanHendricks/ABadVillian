@@ -26,41 +26,25 @@ class TasksService {
 
     }
 
-    // totalTasks() {
-    //     for (let i = 0; i <= ProxyState.tasks.length; i++) {
-    //         let number = ProxyState.tasks[i].length
-    //         console.log('from TT', number)
-    //         console.log('from total tasks', ProxyState.numberOfTasks)
-
-
-    //     }
-    // }
-
     taskDone(taskId) {
-            let checkedBox = ProxyState.tasks.find(t => t.id == taskId)
-            let box = (checkedBox.listId)
-            let card = ProxyState.lists.find(l => l.id == box)
-            console.log(checkedBox, "tudy", card);
+        let checkedBox = ProxyState.tasks.find(t => t.id == taskId)
+        let box = (checkedBox.listId)
+        let card = ProxyState.lists.find(l => l.id == box)
+        console.log(checkedBox, "tudy", card);
 
-            if (checkedBox.taskDone == false) {
-                checkedBox.taskDone = true
-                if (card.numberOfTasksCompleted >= 1) {
-                    card.numberOfTasksCompleted--
-                }
-            } else if (checkedBox.taskDone == true) {
-                card.numberOfTasksCompleted++
-                    checkedBox.taskDone = false
-
+        if (checkedBox.taskDone == false) {
+            checkedBox.taskDone = true
+            if (card.numberOfTasksCompleted >= 1) {
+                card.numberOfTasksCompleted--
             }
-            ProxyState.lists = ProxyState.lists
-            ProxyState.tasks = ProxyState.tasks
+        } else if (checkedBox.taskDone == true) {
+            card.numberOfTasksCompleted++
+                checkedBox.taskDone = false
+
         }
-        // it kinda works but not...
-        // _addNumberOfTasks(listData) {
-        //     listData.numberOfTasks++
-        //         console.log(listData.numberOfTasks);
-        //     ProxyState.lists = ProxyState.lists
-        // }
+        ProxyState.lists = ProxyState.lists
+        ProxyState.tasks = ProxyState.tasks
+    }
 }
 
 export const tasksService = new TasksService()

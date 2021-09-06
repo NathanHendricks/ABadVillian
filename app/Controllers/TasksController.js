@@ -27,10 +27,6 @@ export class TasksController {
 
     }
 
-    // totalTasks() {
-    //     tasksService.totalTasks()
-    // }
-
 
     deleteTasks(taskId) {
         tasksService.deleteTasks(taskId)
