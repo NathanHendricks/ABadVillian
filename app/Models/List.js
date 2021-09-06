@@ -55,7 +55,7 @@ export class List {
     get Tasks() {
         let template = ""
         let foundTasks = ProxyState.tasks.filter(t => t.listId == this.id)
-            // console.log('after filter', foundTasks);
+        console.log('after filter', foundTasks);
         foundTasks.forEach(t => template += t.CardTemplate)
         return template
 

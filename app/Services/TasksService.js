@@ -39,7 +39,7 @@ class TasksService {
             let checkedBox = ProxyState.tasks.find(t => t.id == taskId)
             let box = (checkedBox.listId)
             let card = ProxyState.lists.find(l => l.id == box)
-            console.log(checkedBox, box, card);
+            console.log(checkedBox, "tudy", card);
 
             if (checkedBox.taskDone == false) {
                 checkedBox.taskDone = true
