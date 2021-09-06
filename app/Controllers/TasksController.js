@@ -24,6 +24,13 @@ export class TasksController {
         tasksService.addTasks(taskData)
     }
 
+    taskDone(taskId) {
+        tasksService.taskDone(taskId)
+
+    }
+
+
+
     deleteTasks(taskId) {
         tasksService.deleteTasks(taskId)
             // Swal.fire({
