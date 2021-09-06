@@ -12,6 +12,12 @@ class TasksService {
     addTasks(taskData) {
         console.log("fromm the army", taskData)
         ProxyState.tasks = [...ProxyState.tasks, new Task(taskData)]
+        let currentfound = ProxyState.lists.find(t => t.id == taskData.listId)
+        if (currentfound.numberOfTasks > 0) {
+            currentfound.numberOfTasksCompleted++
+        }
+        currentfound.totalNumberTasks++
+            ProxyState.lists = ProxyState.lists
     }
 
 
@@ -35,28 +41,25 @@ class TasksService {
             let card = ProxyState.lists.find(l => l.id == box)
             console.log(checkedBox, box, card);
 
-            if (checkedBox.taskDone === false) {
+            if (checkedBox.taskDone == false) {
                 checkedBox.taskDone = true
-                if (card.numberOfTasks >= 1) {
-                    card.numberOfTasks--
-                        return card.numberOfTasks
+                if (card.numberOfTasksCompleted >= 1) {
+                    card.numberOfTasksCompleted--
                 }
-                ProxyState.lists = ProxyState.lists
-                ProxyState.tasks = ProxyState.tasks
-            } else if (checkedBox.taskDone === true) {
-                checkedBox.taskDone = false
-                card.numberOfTasks++
-                    ProxyState.lists = ProxyState.lists
-                ProxyState.tasks = ProxyState.tasks
-                return card.numberOfTasks
+            } else if (checkedBox.taskDone == true) {
+                card.numberOfTasksCompleted++
+                    checkedBox.taskDone = false
+
             }
+            ProxyState.lists = ProxyState.lists
+            ProxyState.tasks = ProxyState.tasks
         }
         // it kinda works but not...
-    _addNumberOfTasks(listData) {
-        listData.numberOfTasks++
-            console.log(listData.numberOfTasks);
-        ProxyState.lists = ProxyState.lists
-    }
+        // _addNumberOfTasks(listData) {
+        //     listData.numberOfTasks++
+        //         console.log(listData.numberOfTasks);
+        //     ProxyState.lists = ProxyState.lists
+        // }
 }
 
 export const tasksService = new TasksService()

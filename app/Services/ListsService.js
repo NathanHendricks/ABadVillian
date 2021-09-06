@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js"
 import { List } from "../Models/List.js"
 import { saveState } from "../Utils/LocalStorage.js"
+import { tasksService } from "./TasksService.js"
 
 class ListsService {
 

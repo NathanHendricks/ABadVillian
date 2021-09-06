@@ -2,16 +2,11 @@ import { ProxyState } from "../AppState.js";
 import { listsService } from "../Services/ListsService.js";
 import { tasksService } from "../Services/TasksService.js";
 
-function _drawTasks() {
-    document.getElementById('tasks').innerText = ProxyState.numberOfTasks.toString()
-}
 
 
 export class TasksController {
 
-    constructor() {
-        // ProxyState.on('tasks', _drawTasks)
-    }
+    constructor() {}
 
     addTasks(listId) {
         event.preventDefault()

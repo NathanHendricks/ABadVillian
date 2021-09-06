@@ -6,13 +6,13 @@ import { Task } from "../Models/Task.js"
 
 
 export function saveState() {
-    localStorage.setItem("ToDo", JSON.stringify({ lists: ProxyState.lists, tasks: ProxyState.tasks }))
+    localStorage.setItem("myLists", JSON.stringify({ lists: ProxyState.lists, tasks: ProxyState.tasks }))
 }
 
 export function loadState() {
-    let data = JSON.parse(localStorage.getItem("ToDo"))
-    if (data != null) {
-        ProxyState.lists = data.lists.map(l => new List(l))
-        ProxyState.tasks = data.tasks.map(t => new Task(t))
+    let saveData = JSON.parse(localStorage.getItem("myLists"))
+    if (saveData != null) {
+        ProxyState.lists = saveData.lists.map(l => new List(l))
+        ProxyState.tasks = saveData.tasks.map(t => new Task(t))
     }
 }
