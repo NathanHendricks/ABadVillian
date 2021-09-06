@@ -21,7 +21,11 @@ class TasksService {
 
     totalTasks() {
         for (let i = 0; i <= ProxyState.tasks.length; i++) {
-
+            let number = ProxyState.tasks[i]
+            let newLength = number.length
+            if (newLength = number.length) {
+                console.log(newLength);
+            }
         }
     }
 
