@@ -15,5 +15,10 @@ class ListsService {
         ProxyState.lists = ProxyState.lists.filter(l => l.id !== listId)
     }
 
+    // _addNumberOfTasks(listData) {
+    //     listData.numberOfTasks++
+    //         ProxyState.lists = ProxyState.lists
+    // }
+
 }
 export const listsService = new ListsService()

@@ -10,6 +10,10 @@ function _drawLists() {
 
 }
 
+// function _addNumberOfTasks(listData) {
+//     listsService._addNumberOfTasks(listData)
+// }
+
 export class ListsController {
     constructor() {
         ProxyState.on('lists', _drawLists)

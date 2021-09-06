@@ -6,6 +6,7 @@ export class List {
         this.id = listData.id || generateId()
         this.listName = listData.listName
         this.color = listData.color
+        this.numberOfTasks = listData.numberOfTasks
     }
 
     get CardTemplate() {
